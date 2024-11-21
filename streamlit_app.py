@@ -1,9 +1,9 @@
 import streamlit as st
 import numpy as np
-import joblib 
+import pickle 
 
-model = joblib.load("D:\Gaurika Dhingra\Gaurika_CS\Medical Insurance Cost Prediction\insurance_cost_model.pkl")
-
+with open('insurance_model.pkl', 'rb') as file:
+    model = pickle.load(file)
 
 st.title("Medical Insurance Predictor")
 st.write("Get cost predictions for your next Medical Insurance")
