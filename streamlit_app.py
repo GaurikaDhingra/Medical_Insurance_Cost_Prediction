@@ -5,7 +5,7 @@ import pickle
 with open('insurance_model.pkl', 'rb') as file:
     model = pickle.load(file)
 
-st.title("Medical Insurance Predictor")
+st.title("Medical Insurance Cost Predictor")
 st.write("Get cost predictions for your next Medical Insurance")
 #st.write("Fill in the below details to get your predictions")
 
