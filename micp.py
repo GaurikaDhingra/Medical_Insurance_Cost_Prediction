@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split, RandomizedSearchCV, cross_
 from sklearn.ensemble import RandomForestRegressor 
 from sklearn.metrics import mean_absolute_error
 from sklearn.metrics import r2_score
-import joblib
+import pickle
 
 df = pd.read_csv("insurance.csv")
 print(df.head())
@@ -86,8 +86,8 @@ cv_scores = cross_val_score(model, X, y, cv=5, scoring='neg_mean_absolute_error'
 print("Mean Cross-Validation MAE:", -cv_scores.mean())
 
 ##Save Model 
-joblib.dump(model, 'insurance_cost_model.pkl')
-print("Model saved as 'insurance_cost_model.pkl'")
+with open('insurance_model.pkl', 'wb') as file:
+    pickle.dump(model, file)
 
 
 
